@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    font-size: 18px;
+}
+#main {
+    width: 150px;
+    margin: auto;
+}
+button,input {
+    border-width: 0.8px, 0.8px, 0.8px, 0.8px;
+    padding: 1px, 5px, 1px, 5px;
+    box-shadow: rgb(230, 230, 230) 0px 2px 0px 0px;
+    font-size: 18px;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+button {
+    background-color: #008CBA;
+    border-radius: 2px;
+    border-width: 0px;
+    margin-top: 10px;
+    color: white;
+}
+.table {
+    display: table; 
+    margin: auto;
+}
+.row { display: table-row; }
+.cell { display: table-cell; }
+.payout { display: table-cell; width: 70px;}
+.place { display: table-cell; width: 30px;}
