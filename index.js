@@ -40,3 +40,19 @@ function showPayouts(payouts) {
         payouttable.appendChild(row);  
     });
 }
+
+/**
+ * @param {string} url 
+ */
+function parseQuery(url) {
+    const markIndex = url.indexOf("?");
+    if (markIndex === -1) return {};
+    const query = url.substring(markIndex + 1);
+    const pairs = query.split("&");
+    return pairs.map((pair) => {
+        return pair.split("=");
+    }).reduce((map,kvList) => {
+        map[kvList[0]] = kvList[1];
+        return map;
+    }, {});
+}
