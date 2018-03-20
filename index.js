@@ -1,5 +1,15 @@
 const percentages = [34, 21, 15, 11, 7, 5, 4, 3];
 
+const payoutRatio = {
+    1: [100],
+    2: [60, 40],
+    3: [50, 30, 20],
+    4: [40, 27, 19, 14],
+    5: [35, 25, 18, 13, 9],
+    6: [32, 22, 16.5, 12.5, 9, 8],
+    7: [30, 19, 15, 12, 9, 8, 7]
+};
+
 function calculate() {
     const prize = parseInt(document.getElementById("prize").value);
     const payouts = [];
@@ -37,7 +47,7 @@ function showPayouts(payouts) {
         const row = document.importNode(template, true);
         row.querySelector('.place').innerHTML = i + 1;
         row.querySelector('.payout').innerHTML = v;
-        payouttable.appendChild(row);  
+        payouttable.appendChild(row);
     });
 }
 
@@ -51,8 +61,22 @@ function parseQuery(url) {
     const pairs = query.split("&");
     return pairs.map((pair) => {
         return pair.split("=");
-    }).reduce((map,kvList) => {
+    }).reduce((map, kvList) => {
         map[kvList[0]] = kvList[1];
         return map;
     }, {});
+}
+
+function changePlacesPaid(paid) {
+    const paidInt = parseInt(paid);
+    if (isNaN(paidInt)) {
+        return;
+    }
+}
+
+/**
+ * @returns {object}
+ */
+function getPayoutRatio() {
+    return payoutRatio;
 }

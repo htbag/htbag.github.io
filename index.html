@@ -13,7 +13,8 @@
 <body>
     <div id="main">
         <form onsubmit="return false">
-            Places paid: 8
+            <label for="paid">Places paid</label>
+            <input id="paid" placeholder="Places" type="number" value="" onchange="changePlacesPaid(this.value)"/>
             <br/>Total prize money
             <br/>
             <input id="prize" placeholder="Prize" type="number" value="" />
