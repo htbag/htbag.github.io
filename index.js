@@ -1,5 +1,3 @@
-const percentages = [34, 21, 15, 11, 7, 5, 4, 3];
-
 const payoutRatio = {
     1: [100],
     2: [60, 40],
@@ -7,11 +5,14 @@ const payoutRatio = {
     4: [40, 27, 19, 14],
     5: [35, 25, 18, 13, 9],
     6: [32, 22, 16.5, 12.5, 9, 8],
-    7: [30, 19, 15, 12, 9, 8, 7]
+    7: [30, 19, 15, 12, 9, 8, 7],
+    8: [34, 21, 15, 11, 7, 5, 4, 3]
 };
 
 function calculate() {
     const prize = parseInt(document.getElementById("prize").value);
+    const placesPaid = parseInt(document.getElementById("paid").value);
+    const percentages = payoutRatio[placesPaid];
     const payouts = [];
 
     percentages.forEach((v, i) => {
@@ -68,10 +69,23 @@ function parseQuery(url) {
 }
 
 function changePlacesPaid(paid) {
+    const error = validatePlacesPaid(paid);
+    if (error) {
+        document.getElementById('paid-error').innerHTML = error;
+    } else {
+        document.getElementById('paid-error').innerHTML = "";
+    }
+}
+
+function validatePlacesPaid(paid) {
     const paidInt = parseInt(paid);
     if (isNaN(paidInt)) {
-        return;
+        return "Enter a number";
     }
+    if (paidInt < 1 || paidInt > 8) {
+        return "Must be between 1 and 8";
+    }
+    return undefined;
 }
 
 /**

@@ -30,3 +30,6 @@ button {
 .cell { display: table-cell; }
 .payout { display: table-cell; width: 70px;}
 .place { display: table-cell; width: 30px;}
+.error {
+    color: red;
+}
