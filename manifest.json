@@ -1,0 +1,22 @@
+{
+    "short_name": "PayoutCalc",
+    "name": "Poker Payout Calculator",
+    "icons": [
+      {
+        "src": "/images/poker-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/poker-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "white",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "white"
+  }
+  
