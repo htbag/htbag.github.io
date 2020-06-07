@@ -1,3 +1,8 @@
+/* Only register a service worker if it's supported */
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+}
+
 const payoutRatio = {
     1: [100],
     2: [60, 40],
