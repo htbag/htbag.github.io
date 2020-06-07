@@ -3,12 +3,12 @@
     "name": "Poker Payout Calculator",
     "icons": [
       {
-        "src": "/images/poker-192.png",
+        "src": "https://htbag.github.io/images/poker-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/poker-512.png",
+        "src": "https://htbag.github.io/images/poker-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
